@@ -1,0 +1,62 @@
+$yellow: #FFEE58;
+$black: #000;
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  li {
+    display: inline-block;
+    margin-bottom: 10px;
+
+    a {
+      display: inline-block;
+      text-align: center;
+      line-height: 42px;
+      width: 45px;
+      height: 45px;
+      border: 1px solid $yellow;
+      border-radius: 30px;
+      margin-right: 10px;
+      cursor: pointer;
+      color: $yellow;
+      text-decoration: none;
+
+      &:hover {
+        background-color: $yellow;
+        color: $black;
+      }
+    }
+  }
+
+  :global {
+    .selected {
+      a {
+        background: $yellow;
+        color: $black;
+      }
+    }
+
+    .disabled {
+      a {
+        cursor: default;
+
+        &:hover {
+          background: unset;
+          color: $yellow;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .pagination {
+    flex-wrap: nowrap;
+
+    li {
+      margin-bottom: 0;
+    }
+  }
+}
